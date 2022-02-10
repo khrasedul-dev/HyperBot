@@ -15,10 +15,10 @@ bot.hears('hyperbotstart',(ctx)=>{
 
         const showTest = data.toString()
         
-        bot.telegram.sendMessage(ctx.chat.id , showTest ).catch('Something is wrong')
+        ctx.telegram.sendMessage(ctx.chat.id , showTest ).catch('Something is wrong')
 
         setInterval(()=>{
-            bot.telegram.sendMessage(ctx.chat.id , showTest ).catch('Something is wrong')
+            ctx.telegram.sendMessage(ctx.chat.id , showTest ).catch('Something is wrong')
         },1000*60*60)
     })
 
