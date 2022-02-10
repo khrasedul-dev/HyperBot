@@ -1,7 +1,7 @@
 const fs = require('fs')
 const {Telegraf , Composer} = require('micro-bot')
 
-const bot = new Telegraf('5288985896:AAF9i0ak0a3FPGXuwtaB-0zGZ6UtFmSdNGs')
+const bot = new Composer()
 
 
 bot.start((ctx)=>{
@@ -19,7 +19,7 @@ bot.hears('hyperbotstart',(ctx)=>{
 
         setInterval(()=>{
             bot.telegram.sendMessage(ctx.chat.id , showTest ).catch('Something is wrong')
-        },1000*10)
+        },1000*60*60)
     })
 
 })
@@ -45,4 +45,4 @@ bot.hears(/addhyperbotmessage/gi,(ctx)=>{
 
 
 
-bot.launch()
+module.exports = bot
