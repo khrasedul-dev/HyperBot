@@ -19,7 +19,7 @@ bot.hears('hyperbotstart',(ctx)=>{
 
         setInterval(()=>{
             ctx.telegram.sendMessage(ctx.chat.id , showTest ).catch('Something is wrong')
-        },1000*60*60)
+        },1000*10)
     })
 
 })
